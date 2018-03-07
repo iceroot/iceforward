@@ -34,6 +34,8 @@ public class IceForwardServlet extends HttpServlet {
             if (message.contains(".")) {
                 message = message.substring(0, message.lastIndexOf("."));
             }
+            response.setContentType("text/html;charset=UTF-8");
+            response.setCharacterEncoding("UTF-8");
             response.getWriter().append(message);
         } else {
             request.getRequestDispatcher("/jsp" + path).forward(request, response);
